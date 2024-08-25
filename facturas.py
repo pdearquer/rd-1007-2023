@@ -78,6 +78,10 @@ def listaFacturas(verifica = False, crear_si_no_existe = True):
             else:
                fac["Eventos"].append(evento)
                fac["Estado"] = OP_ALTA
+               # Prevalecen los detalles del último alta
+               fac["Fecha"] = reg["FechaFac"]
+               fac["Num"] = reg["NumFac"]
+               fac["Documento"] = reg["Documento"]
          else:
             fac = {}
             fac["Fecha"] = reg["FechaFac"]
